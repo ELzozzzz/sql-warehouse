@@ -1,1 +1,1 @@
-CREATE SCHEMA bronze;
+CREATE SCHEMA bronze_layer;
