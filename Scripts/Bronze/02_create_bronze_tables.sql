@@ -34,3 +34,25 @@ CREATE TABLE bronze.crm_sales_details(
     sls_quantity INT,
     sls_price INT
 );
+
+
+--create bronze table erp customer info
+CREATE TABLE bronze.erp_cust_az12(
+    cid NVARCHAR(50) ,
+    bdate DATE ,
+    gen NVARCHAR(50)
+);
+
+--create bronze table erp location info
+CREATE TABLE bronze.erp_loc_a101(
+    cid NVARCHAR(50) ,
+    cntry NVARCHAR(50) ,
+);
+
+--create bronze table erp product info
+CREATE TABLE bronze.erp_PX_CAT_G1V2(
+    id NVARCHAR(50) ,
+    cat NVARCHAR(50) ,
+    subcat NVARCHAR(50) ,
+    maintenance NVARCHAR(50)
+);
