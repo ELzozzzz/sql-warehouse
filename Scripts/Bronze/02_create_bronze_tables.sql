@@ -1,6 +1,6 @@
 -- create bronze tables crm customer info table
-IF OBJECT_ID('bronze.crm_cust_info','U') IS NULL
-BEGIN
+IF OBJECT_ID('bronze.crm_cust_info','U') IS NOT NULL
+DROP TABLE bronze.crm_cust_info;
      CREATE TABLE bronze.crm_cust_info(
         cst_id INT ,
         cst_key varchar(50) ,
@@ -10,14 +10,14 @@ BEGIN
         cst_gndr varchar(50) ,
         cst_create_date DATE
     );
-END;
+
 
     
 
 
 -- create bronze tables crm product info table
-IF OBJECT_ID('bronze.crm_prd_info','U') IS NULL
-BEGIN
+IF OBJECT_ID('bronze.crm_prd_info','U') IS NOT NULL
+DROP TABLE bronze.crm_prd_info;
     CREATE TABLE bronze.crm_prd_info(
         prd_id INT ,
         prd_key varchar(50) ,
@@ -27,15 +27,15 @@ BEGIN
         prd_start_dt DATETIME ,
         prd_end_dt DATETIME
     );
-END;
+
     
    
 
 
 
 -- create bronze table bronze.crm_sales_details if not exists
-IF OBJECT_ID('bronze.crm_sales_details', 'U') IS NULL
-BEGIN
+IF OBJECT_ID('bronze.crm_sales_details', 'U') IS NOT NULL
+DROP TABLE bronze.crm_sales_details;
     CREATE TABLE bronze.crm_sales_details(
         sls_ord_num NVARCHAR(50) ,
         sls_prd_key NVARCHAR(50) ,
@@ -48,34 +48,34 @@ BEGIN
         sls_price INT
         
     );
-END;
+
 
 
 --create bronze table erp customer info
-IF OBJECT_ID('bronze.erp_cust_az12', 'U') IS NULL
-BEGIN
+IF OBJECT_ID('bronze.erp_cust_az12', 'U') IS NOT NULL
+DROP TABLE bronze.erp_cust_az12;
 CREATE TABLE bronze.erp_cust_az12(
     cid NVARCHAR(50) ,
     bdate DATE ,
     gen NVARCHAR(50)
 );
-END;
+
 --create bronze table erp location info
-IF OBJECT_ID('bronze.erp_loc_a101', 'U') IS NULL
-BEGIN
+IF OBJECT_ID('bronze.erp_loc_a101', 'U') IS NOT NULL
+DROP TABLE bronze.erp_loc_a101;
 CREATE TABLE bronze.erp_loc_a101(
     cid NVARCHAR(50) ,
     cntry NVARCHAR(50) ,
 );
-END;
+
 
 --create bronze table erp product info
-IF OBJECT_ID('bronze.erp_PX_CAT_G1V2', 'U') IS NULL
-BEGIN
+IF OBJECT_ID('bronze.erp_PX_CAT_G1V2', 'U') IS NOT NULL
+DROP TABLE bronze.erp_PX_CAT_G1V2;
 CREATE TABLE bronze.erp_PX_CAT_G1V2(
     id NVARCHAR(50) ,
     cat NVARCHAR(50) ,
     subcat NVARCHAR(50) ,
     maintenance NVARCHAR(50)
 );
-END;
+
